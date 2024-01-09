@@ -3600,3 +3600,43 @@ Processing by Api::UsersController#index as HTML
 Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1244)
 
 
+Started POST "/api/users" for ::1 at 2024-01-09 10:29:19 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"", "last_name"=>"", "email"=>"", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>""}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 400 Bad Request in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 4383)
+
+
+Started POST "/api/users" for ::1 at 2024-01-09 10:29:26 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com", "user"=>{"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Create (19.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "salim"], ["last_name", "atiyeh"], ["email", "salimatiyeh@gmail.com"], ["created_at", "2024-01-09 16:29:26.358190"], ["updated_at", "2024-01-09 16:29:26.358190"]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+Completed 201 Created in 27ms (Views: 0.7ms | ActiveRecord: 27.0ms | Allocations: 2533)
+
+
+Started POST "/api/users" for ::1 at 2024-01-09 10:31:45 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"", "last_name"=>"", "email"=>"", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>""}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 400 Bad Request in 8ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1678)
+
+
+Started POST "/api/users" for ::1 at 2024-01-09 16:28:38 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"Becky", "last_name"=>"Atiyeh", "email"=>"beckyatiyeh@gmail.com", "user"=>{"first_name"=>"Becky", "last_name"=>"Atiyeh", "email"=>"beckyatiyeh@gmail.com"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mUser Create (23.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "Becky"], ["last_name", "Atiyeh"], ["email", "beckyatiyeh@gmail.com"], ["created_at", "2024-01-09 22:28:38.679965"], ["updated_at", "2024-01-09 22:28:38.679965"]]
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/users_controller.rb:9:in `create'
+Completed 201 Created in 47ms (Views: 2.2ms | ActiveRecord: 33.3ms | Allocations: 2374)
+
+
