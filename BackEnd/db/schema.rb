@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_04_234428) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_10_021119) do
+  create_table "houses", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "square_ft"
+    t.integer "rooms"
+    t.float "bathrooms"
+    t.boolean "occupied"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "rental_price"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"

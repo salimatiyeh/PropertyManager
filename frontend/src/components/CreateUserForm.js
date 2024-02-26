@@ -32,25 +32,25 @@ function CreateUserForm() {
 
   return (
     <>
-    <h1>Create a User</h1>
-    <form onSubmit={handleSubmit}>
-      <label>
-        First Name:
-        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Last Name:
-        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Email:
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <br />
-      <button type="submit">Create User</button>
-    </form>
+      <h1>Create a User</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          First Name:
+          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+        </label>
+        <br />
+        <label>
+          Last Name:
+          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label>
+        <br />
+        <button type="submit">Create User</button>
+      </form>
     </>
   );
 }
