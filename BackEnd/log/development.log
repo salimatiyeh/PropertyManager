@@ -3640,3 +3640,323 @@ HTTP Origin header (http://localhost:3001) didn't match request.base_url (http:/
 Completed 201 Created in 47ms (Views: 2.2ms | ActiveRecord: 33.3ms | Allocations: 2374)
 
 
+Started GET "/api/users" for ::1 at 2024-01-09 17:45:32 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 23ms (Views: 8.3ms | ActiveRecord: 2.4ms | Allocations: 19323)
+
+
+Started GET "/api/users" for ::1 at 2024-01-09 17:45:38 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.9ms | Allocations: 1560)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHouses (20240110020526)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "houses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "square_ft" integer, "rooms" integer, "bathrooms" float, "occupied" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240110020526') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRentalPriceToHouses (20240110021119)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "houses" ADD "rental_price" float[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240110021119') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/houses" for ::1 at 2024-01-09 21:09:19 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 7811)
+
+
+  
+Zeitwerk::NameError (expected file /Users/Me/code/PropertyManager/BackEnd/app/models/house.rb to define constant House, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+app/controllers/api/houses_controller.rb:14:in `index'
+Started GET "/api/houses" for ::1 at 2024-01-09 21:12:13 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 7418)
+
+
+  
+Zeitwerk::NameError (expected file /Users/Me/code/PropertyManager/BackEnd/app/models/house.rb to define constant House, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+app/controllers/api/houses_controller.rb:14:in `index'
+Started GET "/api/houses" for ::1 at 2024-01-09 21:14:20 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 7418)
+
+
+  
+Zeitwerk::NameError (expected file /Users/Me/code/PropertyManager/BackEnd/app/models/house.rb to define constant House, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+app/controllers/api/houses_controller.rb:14:in `index'
+Started GET "/api/houses" for ::1 at 2024-01-09 21:15:17 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 7504)
+
+
+  
+Zeitwerk::NameError (expected file /Users/Me/code/PropertyManager/BackEnd/app/models/house.rb to define constant House, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+app/controllers/api/houses_controller.rb:14:in `index'
+Started GET "/api/houses" for ::1 at 2024-01-09 21:21:54 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 7442)
+
+
+  
+Zeitwerk::NameError (expected file /Users/Me/code/PropertyManager/BackEnd/app/models/house.rb to define constant House, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+app/controllers/api/houses_controller.rb:14:in `index'
+Started GET "/api/houses" for ::1 at 2024-01-09 21:27:12 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 7437)
+
+
+  
+Zeitwerk::NameError (expected file /Users/Me/code/PropertyManager/BackEnd/app/models/house.rb to define constant House, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+app/controllers/api/houses_controller.rb:14:in `index'
+Started GET "/api/houses" for ::1 at 2024-01-09 21:28:29 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 7437)
+
+
+  
+Zeitwerk::NameError (expected file /Users/Me/code/PropertyManager/BackEnd/app/models/house.rb to define constant House, but didn't
+
+      raise Zeitwerk::NameError.new(msg, cref.last)
+      ^^^^^):
+  
+app/controllers/api/houses_controller.rb:14:in `index'
+Started GET "/api/houses" for ::1 at 2024-01-10 08:42:42 -0600
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 20ms (Views: -1.2ms | ActiveRecord: 15.1ms | Allocations: 3808)
+
+
+Started GET "/api/users" for ::1 at 2024-01-10 08:43:21 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 28ms (Views: 20.4ms | ActiveRecord: 2.9ms | Allocations: 13730)
+
+
+Started GET "/api/users/new" for ::1 at 2024-01-10 10:36:45 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/new"):
+  
+Started GET "/api/houses/new" for ::1 at 2024-01-10 10:36:53 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/houses/new"):
+  
+Started GET "/" for ::1 at 2024-01-10 10:37:12 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Me/.rvm/gems/ruby-3.1.2/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Me/.rvm/gems/ruby-3.1.2/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 293)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 1272)
+
+
+Started GET "/api/users" for ::1 at 2024-01-10 10:37:26 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 38ms (Views: 7.9ms | ActiveRecord: 29.3ms | Allocations: 1856)
+
+
+Started GET "/api/houses" for ::1 at 2024-01-10 10:37:33 -0600
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1899)
+
+
+Started GET "/api/houses" for ::1 at 2024-01-10 10:38:59 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (0.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 9290)
+
+
+Started GET "/api/houses" for ::1 at 2024-01-10 10:39:02 -0600
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started GET "/api/users" for ::1 at 2024-01-10 10:50:46 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 37ms (Views: 14.1ms | ActiveRecord: 18.3ms | Allocations: 13189)
+
+
+Started GET "/users/new" for ::1 at 2024-01-10 14:16:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/new"):
+  
+Started GET "/api/users" for ::1 at 2024-01-10 14:18:27 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 27ms (Views: 8.8ms | ActiveRecord: 2.2ms | Allocations: 19959)
+
+
+Started GET "/api/houses" for ::1 at 2024-01-10 14:18:32 -0600
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 10ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 2233)
+
+
+Started GET "/api/houses" for ::1 at 2024-01-11 13:26:04 -0600
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (13.4ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 39ms (Views: 12.3ms | ActiveRecord: 20.8ms | Allocations: 1110)
+
+
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mHouse Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "houses"[0m
+Started GET "/" for 127.0.0.1 at 2024-02-25 11:46:12 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/salimatiyeh/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/salimatiyeh/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 384)
+Completed 200 OK in 14ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 7494)
+
+
+Started POST "/api/users" for ::1 at 2024-02-25 11:49:39 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com", "user"=>{"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "salim"], ["last_name", "atiyeh"], ["email", "salimatiyeh@gmail.com"], ["created_at", "2024-02-25 17:49:39.333116"], ["updated_at", "2024-02-25 17:49:39.333116"]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+Completed 201 Created in 12ms (Views: 0.5ms | ActiveRecord: 3.0ms | Allocations: 13086)
+
+
+Started POST "/api/users" for ::1 at 2024-02-25 11:49:41 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com", "user"=>{"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "salim"], ["last_name", "atiyeh"], ["email", "salimatiyeh@gmail.com"], ["created_at", "2024-02-25 17:49:41.027263"], ["updated_at", "2024-02-25 17:49:41.027263"]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+Completed 201 Created in 8ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 2231)
+
+
+Started POST "/api/users" for ::1 at 2024-02-25 11:49:57 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com", "user"=>{"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "salim"], ["last_name", "atiyeh"], ["email", "salimatiyeh@gmail.com"], ["created_at", "2024-02-25 17:49:57.056459"], ["updated_at", "2024-02-25 17:49:57.056459"]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+Completed 201 Created in 4ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 2189)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2024-02-25 11:50:51 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 31ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 7113)
+
+
+Started POST "/api/users" for ::1 at 2024-02-25 11:51:02 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com", "user"=>{"first_name"=>"salim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "salim"], ["last_name", "atiyeh"], ["email", "salimatiyeh@gmail.com"], ["created_at", "2024-02-25 17:51:02.546834"], ["updated_at", "2024-02-25 17:51:02.546834"]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+Completed 201 Created in 5ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 2269)
+
+
+Started POST "/api/users" for ::1 at 2024-02-25 11:51:10 -0600
+Processing by Api::UsersController#create as */*
+  Parameters: {"first_name"=>"jasim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com", "user"=>{"first_name"=>"jasim", "last_name"=>"atiyeh", "email"=>"salimatiyeh@gmail.com"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["first_name", "jasim"], ["last_name", "atiyeh"], ["email", "salimatiyeh@gmail.com"], ["created_at", "2024-02-25 17:51:10.944038"], ["updated_at", "2024-02-25 17:51:10.944038"]]
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/users_controller.rb:6:in `create'
+Completed 201 Created in 17ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2173)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2024-02-25 11:51:14 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `index'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 1.5ms | Allocations: 1777)
+
+
+Started GET "/api/houses" for 127.0.0.1 at 2024-02-25 11:58:32 -0600
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3143)
+
+
+Started GET "/api/houses" for 127.0.0.1 at 2024-02-25 11:58:35 -0600
+Processing by Api::HousesController#index as HTML
+  [1m[36mHouse Load (0.2ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+  ↳ app/controllers/api/houses_controller.rb:15:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 774)
+
+
+Started GET "/api/house/new" for 127.0.0.1 at 2024-02-25 11:59:04 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/house/new"):
+  
